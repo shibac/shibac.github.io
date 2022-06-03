@@ -1,8 +1,8 @@
 {
   "name": "audio-pwa",
   "version": "0.1.0",
+  "homepage": "https://shibac.github.io/my-app",
   "private": true,
-  "homepage": "https://shibac.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -30,10 +30,12 @@
   },
   "scripts": {
     "start": "react-scripts start && cra-append-sw --mode dev ./custom-sw.js",
-    "build": "react-scripts build && cra-append-sw ./custom-sw.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-sw": "http-server ./build"
+    "start-sw": "http-server ./build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
